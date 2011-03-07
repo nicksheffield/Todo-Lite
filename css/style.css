@@ -1,0 +1,48 @@
+/*
+	By Nick Sheffield
+	nick@nicksheffield.com
+*/
+
+/* ------------------------------------------------------- MISC */
+	body{
+		margin:40px 60px;
+	}
+	
+	h1,h2,h3{cursor:default;}
+	
+/* ------------------------------------------------------- HEADER */
+	header{
+		padding-bottom:20px;
+		margin-bottom:40px;
+		border-bottom:1px solid #ccc;
+		cursor:default;
+	}
+	
+	header h1{
+		font-size:32px;
+		display:inline-block;
+		margin-top:-5px;
+		padding-bottom:5px;
+		letter-spacing:-1px;
+		color:#DD0000;
+	}
+	
+	header input{
+		padding:5px;
+		width:270px;
+		float:right;
+	}
+	
+/* ------------------------------------------------------- MAIN */
+
+	section{
+		margin-bottom:20px;
+	}
+	
+	section h1{
+		display:none;
+	}
+	
+	section p{
+		margin-bottom:5px;
+	}
