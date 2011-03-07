@@ -6,9 +6,14 @@
 /* ------------------------------------------------------- MISC */
 	body{
 		margin:40px 60px;
+		cursor:default;
 	}
 	
 	h1,h2,h3{cursor:default;}
+	
+	*[contenteditable=true]{
+		cursor:text;
+	}
 	
 /* ------------------------------------------------------- HEADER */
 	header{
