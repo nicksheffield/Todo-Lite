@@ -19,7 +19,7 @@
 	if($_GET['type']=='create'){
 	
 		$date = strftime( "%b %d %Y %H:%M", time());
-		$content = $_POST['content']; // will add security later, once it's all working, but probably don't need it
+		$content = sqlite_escape_string($_POST['content']); // will add security later, once it's all working, but probably don't need it
 		
 		$created = $db->queryExec("INSERT INTO $table('id','content','date') VALUES(
 			null,
@@ -35,7 +35,7 @@
 				
 				<h1>List Item '.$db->lastInsertRowid().'</h1>
 				<p contenteditable="true">
-					'.$content.'
+					'.$_POST['content'].'
 				</p>
 				<p class="date" title="'.$date.'">
 					just now
