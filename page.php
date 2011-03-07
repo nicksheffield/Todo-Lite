@@ -35,7 +35,7 @@
 					<a href="#" class="delete"><img src="images/cross.png"/></a>
 				</div>
 				
-				<h1>List Item <?php echo $post['id']; ?></h1>
+				<h1><?php echo substr($post['content'],0,50); ?></h1>
 				<p contenteditable="true">
 					<?php echo $post['content']; ?>
 				</p>

@@ -43,7 +43,7 @@ $(document).ready(function(){
 		
 		clearTimeout(t);
 		
-		var elem = $(this);
+		var content = $(this).text();
 		var id = $(this).parent().attr('id');
 		
 		t = setTimeout(function(){
@@ -52,7 +52,7 @@ $(document).ready(function(){
 				type:'POST',
 				url:'crud.php?type=update',
 				data:{
-					content:elem.text(),
+					content:content,
 					id:id
 				},
 				success:function(msg){
