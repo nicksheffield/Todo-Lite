@@ -39,7 +39,7 @@ $(document).ready(function(){
 	
 	// Update
 	var t;
-	$('p[contenteditable=true]').keyup(function(){
+	$('p[contenteditable=true]').live('keyup',function(){
 		
 		clearTimeout(t);
 		
