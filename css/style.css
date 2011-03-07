@@ -43,11 +43,11 @@
 	section{
 		margin-bottom:20px;
 		padding-bottom:10px;
+		width:500px;
 	}
 	
 	section .buttons{
 		float:left;
-		height:40px;
 		width:20px;
 		margin-right:20px;
 		padding-top:10px;
@@ -59,6 +59,7 @@
 	
 	section p{
 		margin-bottom:5px;
+		margin-left:40px;
 	}
 	
 	p.date{

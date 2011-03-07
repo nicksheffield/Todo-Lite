@@ -26,11 +26,11 @@ $(document).ready(function(){
 					if(msg){
 						$('#main').append(msg);
 						
-						$('#main section').last().slideUp(0).slideDown(100);
+						$('#main section').last().slideUp(0).slideDown(200).find('.delete').css('opacity',0);
 						
 						$('#post').val('');
 					}else{
-						console.log('false');
+						console.error('create failed');
 					}
 				}
 			});
@@ -38,27 +38,27 @@ $(document).ready(function(){
 	});
 	
 	// delete
-	$('.delete').css('opacity',0).click(function(){
+	$('.delete').css('opacity',0).live('click',function(){
+		var parent = $(this).parent().parent();
 		$.ajax({
 				type:'POST',
 				url:'crud.php?type=delete',
 				data:{
-					id:$(this).parent().parent().attr('id')
+					id:parent.attr('id')
 				},
 				success:function(msg){
-					console.log(msg);
 					if(msg){
-						console.log('deleted')
+						parent.slideUp(200);
 					}else{
-						console.log('not deleted');
+						console.error('delete failed');
 					}
 				}
 			});
 	});
-	$('section').hover(function(e){
-		$('.delete',this).hoverFlow('mouseover', {'opacity':1}, 200);
-	},function(e){
-		$('.delete',this).hoverFlow('mouseout', {'opacity':0}, 200);
+	$('section').live('mouseover',function(e){
+		$('.delete',this).css('opacity',1);
+	}).live('mouseout',function(e){
+		$('.delete',this).css('opacity',0);
 	});
 	
 	

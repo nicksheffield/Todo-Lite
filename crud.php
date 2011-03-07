@@ -29,6 +29,10 @@
 		
 		if($sent){
 			echo '<section>
+				<div class="buttons">
+					<a href="#" class="delete"><img src="images/cross.png"/></a>
+				</div>
+				
 				<h1>List Item '.$db->lastInsertRowid.'</h1>
 				<p contenteditable="true">
 					'.$content.'
