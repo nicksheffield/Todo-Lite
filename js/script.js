@@ -11,6 +11,7 @@ $(document).ready(function(){
 	},5000);
 	
 	
+	// create
 	$('#post').keyup(function(e){
 		// if the enter key is pressed
 		if(e.which==13){
@@ -24,6 +25,10 @@ $(document).ready(function(){
 				success:function(msg){
 					if(msg){
 						$('#main').append(msg);
+						
+						$('#main section').last().slideUp(0).slideDown(100);
+						
+						$('#post').val('');
 					}else{
 						console.log('false');
 					}
@@ -31,4 +36,34 @@ $(document).ready(function(){
 			});
 		}
 	});
+	
+	// delete
+	$('.delete').css('opacity',0).click(function(){
+		$.ajax({
+				type:'POST',
+				url:'crud.php?type=delete',
+				data:{
+					id:$(this).parent().parent().attr('id')
+				},
+				success:function(msg){
+					console.log(msg);
+					if(msg){
+						console.log('deleted')
+					}else{
+						console.log('not deleted');
+					}
+				}
+			});
+	});
+	$('section').hover(function(e){
+		$('.delete',this).hoverFlow('mouseover', {'opacity':1}, 200);
+	},function(e){
+		$('.delete',this).hoverFlow('mouseout', {'opacity':0}, 200);
+	});
+	
+	
+	
+	
 });
+
+

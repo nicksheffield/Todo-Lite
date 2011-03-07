@@ -1,5 +1,6 @@
 <?php
 
+// CReate Update Delete (no reading going on here lul)
 
 # if not from ajax then quit the script
 
@@ -17,7 +18,7 @@
 
 	if($_GET['type']=='create'){
 	
-		$date = date('c');
+		$date = strftime( "%b %d %Y %H:%M", time());
 		$content = $_POST['content']; // will add security later, once it's all working, but probably don't need it
 		
 		$sent = $db->queryExec("INSERT INTO $table('id','content','date') VALUES(
@@ -40,5 +41,13 @@
 		}else{
 			echo false;
 		}
+		
+	}
+	
+	if($_GET['type']=='delete'){
+		
+		$deleted = $db->queryExec("DELETE FROM $table WHERE id='".$_POST['id']."'");
+		
+		echo $deleted;
 		
 	}

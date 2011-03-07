@@ -30,7 +30,11 @@
 		<div id="main">
 			<?php foreach($list as $post): ?>
 			
-			<section>
+			<section id="<?php echo $post['id']; ?>">
+				<div class="buttons">
+					<a href="#" class="delete"><img src="images/cross.png"/></a>
+				</div>
+				
 				<h1>List Item <?php echo $post['id']; ?></h1>
 				<p contenteditable="true">
 					<?php echo $post['content']; ?>
@@ -49,6 +53,7 @@
 	</div> <!--! end of #container -->
 
 	<script src="js/jquery-1.5.1.min.js"></script>
+	<script src="js/jquery.hoverflow.min.js"></script>
 	<script src="js/pretty.js"></script>
 	<script src="js/script.js?v=<?php echo rand(0,999999);?>"></script>
 </body>
