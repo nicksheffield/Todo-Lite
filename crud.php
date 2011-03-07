@@ -21,6 +21,8 @@
 		$date = strftime( "%b %d %Y %H:%M", time());
 		$content = sqlite_escape_string($_POST['content']); // will add security later, once it's all working, but probably don't need it
 		
+		if(strstr($content,'<script')) die(false);
+		
 		$created = $db->queryExec("INSERT INTO $table('id','content','date') VALUES(
 			null,
 			'$content',
