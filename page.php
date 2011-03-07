@@ -24,7 +24,7 @@
 		<header>
 			<h1><?php echo $title; ?></h1>
 			
-			<input type="text" placeholder="New List Item" />
+			<input type="text" placeholder="New List Item" id="post" />
 		</header>
 		
 		<div id="main">
