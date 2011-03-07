@@ -21,13 +21,13 @@
 		$date = strftime( "%b %d %Y %H:%M", time());
 		$content = $_POST['content']; // will add security later, once it's all working, but probably don't need it
 		
-		$sent = $db->queryExec("INSERT INTO $table('id','content','date') VALUES(
+		$created = $db->queryExec("INSERT INTO $table('id','content','date') VALUES(
 			null,
 			'$content',
 			'$date'
 		)");
 		
-		if($sent){
+		if($created){
 			echo '<section>
 				<div class="buttons">
 					<a href="#" class="delete"><img src="images/cross.png"/></a>
@@ -47,6 +47,18 @@
 		}
 		
 	}
+	
+# to update an item in the database
+
+	if($_GET['type']=='update'){
+		
+		$updated = $db->queryExec("UPDATE list SET content='".$_POST['content']."' WHERE id='".$_POST['id']."'");
+		
+		echo $updated;
+		
+	}
+	
+# to delete an item in the database
 	
 	if($_GET['type']=='delete'){
 		

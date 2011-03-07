@@ -53,7 +53,6 @@
 	</div> <!--! end of #container -->
 
 	<script src="js/jquery-1.5.1.min.js"></script>
-	<script src="js/jquery.hoverflow.min.js"></script>
 	<script src="js/pretty.js"></script>
 	<script src="js/script.js?v=<?php echo rand(0,999999);?>"></script>
 </body>

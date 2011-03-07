@@ -11,7 +11,7 @@ $(document).ready(function(){
 	},5000);
 	
 	
-	// create
+	// CReate
 	$('#post').keyup(function(e){
 		// if the enter key is pressed
 		if(e.which==13){
@@ -37,7 +37,36 @@ $(document).ready(function(){
 		}
 	});
 	
-	// delete
+	// Update
+	var t;
+	$('p[contenteditable=true]').keyup(function(){
+		
+		clearTimeout(t);
+		
+		var elem = $(this);
+		var id = $(this).parent().attr('id');
+		
+		t = setTimeout(function(){
+		
+			$.ajax({
+				type:'POST',
+				url:'crud.php?type=update',
+				data:{
+					content:elem.text(),
+					id:id
+				},
+				success:function(msg){
+					if(!msg){
+						console.error('update failure');
+					}
+				}
+			});
+			
+		},500);
+		
+	});
+	
+	// Delete
 	$('.delete').css('opacity',0).live('click',function(){
 		var parent = $(this).parent().parent();
 		$.ajax({
