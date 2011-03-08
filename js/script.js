@@ -43,16 +43,19 @@ $(document).ready(function(){
 		
 		clearTimeout(t);
 		
-		var content = $(this).text();
+		var content = $(this);
 		var id = $(this).parent().attr('id');
+		
+		var content_html = content.html().replace('<div>','<br/>');
+			content_html = content_html.replace('</div>','');
 		
 		t = setTimeout(function(){
 		
-			/*$.ajax({
+			$.ajax({
 				type:'POST',
 				url:'crud.php?type=update',
 				data:{
-					content:content,
+					content:content_html,
 					id:id
 				},
 				success:function(msg){
@@ -60,12 +63,18 @@ $(document).ready(function(){
 						console.error('update failure');
 					}
 				}
-			});*/
+			});
 			
-			console.log(content.replace('\r','<br/>'));
+			console.log(content_html);
 			
 		},500);
 		
+	}).live('keyup',function(e){
+		if(e.which==13){
+			//e.preventDefault();
+			//$(this).focus();
+			
+		}
 	});
 	
 	// Delete

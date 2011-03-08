@@ -8,6 +8,7 @@
 		cursor:default;
 		height:100%;
 		background:#222;
+		margin-top:20px;
 	}
 	
 	body,input{
@@ -23,9 +24,11 @@
 	#container{
 		width:600px;
 		margin:0 auto;
-		background:#efefef;
+		background:#fefefe;
 		height:100%;
 		padding:40px 60px;
+		
+		border-radius:5px;
 	}
 	
 /* ------------------------------------------------------- HEADER */
@@ -37,7 +40,7 @@
 	}
 	
 	header h1{
-		font-size:32px;
+		font-size:46px;
 		display:inline-block;
 		margin-top:-5px;
 		padding-bottom:5px;
@@ -47,10 +50,17 @@
 	}
 	
 	header input{
-		padding:5px;
+		padding:10px;
 		width:270px;
-		margin-left:50px;
-		margin-bottom:15px;
+		margin-top:10px;
+		float:right;
+		
+		background:#fefefe;
+		border:1px solid #eee;
+	}
+	
+	header input:focus{
+		outline:1px solid #aaa;
 	}
 
 	
