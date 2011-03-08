@@ -35,7 +35,7 @@
 					<a href="#" class="delete"><img src="images/cross.png"/></a>
 				</div>
 				
-				<h1>List Item '.$db->lastInsertRowid().'</h1>
+				<h1>'.substr($_POST['content'],0,50).'</h1>
 				<p contenteditable="true">
 					'.$_POST['content'].'
 				</p>
@@ -54,7 +54,7 @@
 
 	if($_GET['type']=='update'){
 		
-		$updated = $db->queryExec("UPDATE list SET content='".$_POST['content']."' WHERE id='".$_POST['id']."'");
+		$updated = $db->queryExec("UPDATE list SET content='".sqlite_escape_string($_POST['content'])."' WHERE id='".sqlite_escape_string($_POST['id'])."'");
 		
 		echo $updated;
 		
@@ -64,7 +64,7 @@
 	
 	if($_GET['type']=='delete'){
 		
-		$deleted = $db->queryExec("DELETE FROM $table WHERE id='".$_POST['id']."'");
+		$deleted = $db->queryExec("DELETE FROM $table WHERE id='".sqlite_escape_string($_POST['id'])."'");
 		
 		echo $deleted;
 		
