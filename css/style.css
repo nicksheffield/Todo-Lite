@@ -4,9 +4,13 @@
 */
 
 /* ------------------------------------------------------- MISC */
-	body{
-		margin:40px 60px;
+	html,body{
 		cursor:default;
+		height:100%;
+		background:#222;
+	}
+	
+	body,input{
 		font-family:'Ubuntu',Arial,Helvetica,sans-serif;
 	}
 	
@@ -14,6 +18,14 @@
 	
 	*[contenteditable=true]{
 		cursor:text;
+	}
+	
+	#container{
+		width:600px;
+		margin:0 auto;
+		background:#efefef;
+		height:100%;
+		padding:40px 60px;
 	}
 	
 /* ------------------------------------------------------- HEADER */
@@ -30,14 +42,17 @@
 		margin-top:-5px;
 		padding-bottom:5px;
 		letter-spacing:-1px;
-		color:#DD0000;
+		color:#000;
+		text-shadow:0px 0px 5px #aaa;
 	}
 	
 	header input{
 		padding:5px;
 		width:270px;
-		float:right;
+		margin-left:50px;
+		margin-bottom:15px;
 	}
+
 	
 /* ------------------------------------------------------- MAIN */
 

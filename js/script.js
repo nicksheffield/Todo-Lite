@@ -48,7 +48,7 @@ $(document).ready(function(){
 		
 		t = setTimeout(function(){
 		
-			$.ajax({
+			/*$.ajax({
 				type:'POST',
 				url:'crud.php?type=update',
 				data:{
@@ -60,7 +60,9 @@ $(document).ready(function(){
 						console.error('update failure');
 					}
 				}
-			});
+			});*/
+			
+			console.log(content.replace('\r','<br/>'));
 			
 		},500);
 		

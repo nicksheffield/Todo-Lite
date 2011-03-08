@@ -19,7 +19,7 @@
 	if($_GET['type']=='create'){
 	
 		$date = strftime( "%b %d %Y %H:%M", time());
-		$content = sqlite_escape_string($_POST['content']); // will add security later, once it's all working, but probably don't need it
+		$content = sqlite_escape_string($_POST['content']); // will add better security later, once it's all working, but probably don't need it
 		
 		if(strstr($content,'<script')) die(false);
 		

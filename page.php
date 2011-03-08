@@ -13,6 +13,7 @@
 	<title><?php echo $title; ?></title>
 	
 	<link rel="shortcut icon" href="favicon.ico">
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css?v=<?php echo rand(0,999999);?>">
 
