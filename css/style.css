@@ -7,6 +7,7 @@
 	body{
 		margin:40px 60px;
 		cursor:default;
+		font-family:'Ubuntu',Arial,Helvetica,sans-serif;
 	}
 	
 	h1,h2,h3{cursor:default;}
