@@ -10,8 +10,6 @@
 
 	$list = $db->get('id,content,date');
 
-	include('page.php');
-
 ?>
 
 <!doctype html>	
