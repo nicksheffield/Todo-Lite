@@ -19,7 +19,7 @@ class sqlite {
 			$q = $this->db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='$table'");
 			
 			# If not, then we need to create it
-			if($q->numRows()==0){
+			if(!$q->numRows()){
 				
 				# Query the database to create the table
 				$this->db->queryexec(
@@ -68,16 +68,14 @@ class sqlite {
 		$q = "SELECT ";
 		
 		# go through each value in $arr, and add it to the select query string
-		foreach($arr as $k=>$v){
-			$q .= $v.',';
+		foreach($arr as $key=>$value){
+			$q .= $value.',';
 		}
 		
 		# trim the last comma off the string, and add the FROM tablename to the end
 		$q = $this->trim($q).' FROM '.$this->table;
 		
 		$q .= $this->where_conditions;
-		
-		//echo $q;
 		
 		# send the query to the database
 		return $this->db->arrayQuery($q,SQLITE_ASSOC);
@@ -96,10 +94,10 @@ class sqlite {
 	
 # Delete a record where the first argument is equal to the second argument
 	
-	public function del($key,$val){
+	public function del($key,$value){
 	
 		# write the delete query 
-		$query = "DELETE FROM $this->table WHERE $key='$val'";
+		$query = "DELETE FROM $this->table WHERE $key='$value'";
 		
 		# sent the delete query
 		return $this->db->unbufferedQuery($query);
@@ -114,21 +112,45 @@ class sqlite {
 		
 		$q = "INSERT INTO $this->table( ";
 		
-		foreach($arr as $k=>$v){
-			$q .= "$k,";
+		foreach($arr as $key=>$value){
+			$q .= "$key,";
 		}
 		
 		$q = $this->trim($q).') VALUES(';
 		
-		foreach($arr as $k=>$v){
-			$q .= "'$v',";
+		foreach($arr as $key=>$value){
+			$q .= "'$value',";
 		}
 		
 		$q = $this->trim($q).')';
 		
+		echo $q;
+		
 		$exec = $this->db->queryexec($q);
 		
 		$this->last_insert = $this->db->lastInsertRowid();
+		
+		return $exec;
+	}
+	
+	
+	
+	
+# Update a record in the database
+	
+	public function update($arr){
+		
+		$q = "UPDATE $this->table SET ";
+		
+		foreach($arr as $key=>$value){
+			$q .= "$key='$value',";
+		}
+		
+		$q = $this->trim($q,1);
+		
+		$q .= $this->where_conditions;
+		
+		$exec = $this->db->queryexec($q);
 		
 		return $exec;
 	}

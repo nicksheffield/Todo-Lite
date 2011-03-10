@@ -37,7 +37,7 @@ $(document).ready(function(){
 			});
 		}
 	});
-	/*
+	
 	// Update
 	var t;
 	$('p[contenteditable=true]').live('keyup',function(){
@@ -47,14 +47,13 @@ $(document).ready(function(){
 		var content = $(this);
 		var id = $(this).parent().attr('id');
 		
-		var content_html = content.html().replace('<div>','<br/>');
-			content_html = content_html.replace('</div>','');
+		var content_html = content.html();
 		
 		t = setTimeout(function(){
 		
 			$.ajax({
 				type:'POST',
-				url:'crud.php?type=update',
+				url:'update.php',
 				data:{
 					content:content_html,
 					id:id
@@ -62,11 +61,12 @@ $(document).ready(function(){
 				success:function(msg){
 					if(!msg){
 						console.error('update failure');
+					}else{
+						console.log('success!');
+						console.log(msg);
 					}
 				}
 			});
-			
-			console.log(content_html);
 			
 		},500);
 		
@@ -77,7 +77,7 @@ $(document).ready(function(){
 			
 		}
 	});
-	*/
+	
 	// Delete
 	$('.delete').css('opacity',0).live('click',function(){
 		var parent = $(this).parent().parent();
