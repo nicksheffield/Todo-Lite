@@ -124,8 +124,6 @@ class sqlite {
 		
 		$q = $this->trim($q).')';
 		
-		echo $q;
-		
 		$exec = $this->db->queryexec($q);
 		
 		$this->last_insert = $this->db->lastInsertRowid();
