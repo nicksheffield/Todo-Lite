@@ -29,23 +29,11 @@
 		</header>
 		
 		<div id="main">
-			<?php foreach($list as $post): ?>
-			
-			<section id="<?php echo $post['id']; ?>">
-				<div class="buttons">
-					<a href="#" class="delete"><img src="images/12.png"/></a>
-				</div>
-				
-				<h1><?php echo substr($post['content'],0,50); ?></h1>
-				<p contenteditable="true">
-					<?php echo $post['content']; ?>
-				</p>
-				<p class="date" title="<?php echo $post['date']; ?>">
-					&nbsp;
-				</p>
-			</section>
-			
-			<?php endforeach; ?>
+			<?php 
+				foreach($list as $post){
+					new template($post);
+				}
+			?>
 		</div>
 		
 		<footer>

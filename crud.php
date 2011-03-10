@@ -14,42 +14,6 @@
 	$db = new SQLiteDatabase($dbname,0666);
 	
 	
-# to create an item in the database
-
-	if($_GET['type']=='create'){
-	
-		$date = strftime( "%b %d %Y %H:%M", time());
-		$content = sqlite_escape_string($_POST['content']); // will add better security later, once it's all working, but probably don't need it
-		
-		if(strstr($content,'<script')) die(false);
-		
-		$created = $db->queryExec("INSERT INTO $table('id','content','date') VALUES(
-			null,
-			'$content',
-			'$date'
-		)");
-		
-		if($created){
-			echo '<section id="'.$db->lastInsertRowid().'">
-				<div class="buttons">
-					<a href="#" class="delete"><img src="images/cross.png"/></a>
-				</div>
-				
-				<h1>'.substr($_POST['content'],0,50).'</h1>
-				<p contenteditable="true">
-					'.$_POST['content'].'
-				</p>
-				<p class="date" title="'.$date.'">
-					just now
-				</p>
-			</section>';
-			
-		}else{
-			echo false;
-		}
-		
-	}
-	
 # to update an item in the database
 
 	if($_GET['type']=='update'){
@@ -57,15 +21,5 @@
 		$updated = $db->queryExec("UPDATE list SET content='".sqlite_escape_string($_POST['content'])."' WHERE id='".sqlite_escape_string($_POST['id'])."'");
 		
 		echo $updated;
-		
-	}
-	
-# to delete an item in the database
-	
-	if($_GET['type']=='delete'){
-		
-		$deleted = $db->queryExec("DELETE FROM $table WHERE id='".sqlite_escape_string($_POST['id'])."'");
-		
-		echo $deleted;
 		
 	}

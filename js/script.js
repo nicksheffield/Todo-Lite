@@ -23,6 +23,7 @@ $(document).ready(function(){
 					content:$(this).val()
 				},
 				success:function(msg){
+					console.log(msg);
 					if(msg){
 						$('#main').append(msg);
 						
@@ -76,13 +77,13 @@ $(document).ready(function(){
 			
 		}
 	});
-	
+	*/
 	// Delete
 	$('.delete').css('opacity',0).live('click',function(){
 		var parent = $(this).parent().parent();
 		$.ajax({
 				type:'POST',
-				url:'crud.php?type=delete',
+				url:'delete.php',
 				data:{
 					id:parent.attr('id')
 				},
@@ -100,7 +101,7 @@ $(document).ready(function(){
 	}).live('mouseout',function(e){
 		$('.delete',this).css('opacity',0);
 	});
-	*/
+	
 	
 	
 	
