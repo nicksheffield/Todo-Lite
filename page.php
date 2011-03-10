@@ -33,7 +33,7 @@
 			
 			<section id="<?php echo $post['id']; ?>">
 				<div class="buttons">
-					<a href="#" class="delete"><img src="images/cross.png"/></a>
+					<a href="#" class="delete"><img src="images/12.png"/></a>
 				</div>
 				
 				<h1><?php echo substr($post['content'],0,50); ?></h1>

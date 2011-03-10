@@ -51,12 +51,15 @@
 	
 	header input{
 		padding:10px;
+		padding-left:33px;
 		width:270px;
 		margin-top:0px;
 		float:right;
 		
 		background:#fefefe;
 		border:1px solid #ccc;
+		
+		background:url('../images/11.png') no-repeat 11px 11px;
 		
 	}
 	
