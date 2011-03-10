@@ -18,7 +18,7 @@ $(document).ready(function(){
 			// call ajax to publish the new item
 			$.ajax({
 				type:'POST',
-				url:'crud.php?type=create',
+				url:'insert.php',
 				data:{
 					content:$(this).val()
 				},
@@ -36,7 +36,7 @@ $(document).ready(function(){
 			});
 		}
 	});
-	
+	/*
 	// Update
 	var t;
 	$('p[contenteditable=true]').live('keyup',function(){
@@ -100,7 +100,7 @@ $(document).ready(function(){
 	}).live('mouseout',function(e){
 		$('.delete',this).css('opacity',0);
 	});
-	
+	*/
 	
 	
 	
