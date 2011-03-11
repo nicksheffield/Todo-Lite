@@ -23,11 +23,10 @@ $(document).ready(function(){
 					content:$(this).val()
 				},
 				success:function(msg){
-					console.log(msg);
 					if(msg){
 						$('#main').append(msg);
 						
-						$('#main section').last().slideUp(0).slideDown(200).find('.delete').css('opacity',0);
+						$('#main section').last().slideUp(0).slideDown(200);
 						
 						$('#post').val('');
 					}else{
@@ -44,10 +43,8 @@ $(document).ready(function(){
 		
 		clearTimeout(t);
 		
-		var content = $(this);
+		var content = $(this).html();
 		var id = $(this).parent().attr('id');
-		
-		var content_html = content.html();
 		
 		t = setTimeout(function(){
 		
@@ -55,7 +52,7 @@ $(document).ready(function(){
 				type:'POST',
 				url:'update.php',
 				data:{
-					content:content_html,
+					content:content,
 					id:id
 				},
 				success:function(msg){
@@ -73,7 +70,7 @@ $(document).ready(function(){
 	});
 	
 	// Delete
-	$('.delete')/*.css('opacity',0)*/.live('click',function(){
+	$('.delete').live('click',function(){
 		var parent = $(this).parent().parent();
 		
 		$('p.date',parent).removeClass('date').text('Removing...');
@@ -92,12 +89,6 @@ $(document).ready(function(){
 				}
 			});
 	});
-	/*$('section').live('mouseover',function(e){
-		$('.delete',this).css('opacity',1);
-	}).live('mouseout',function(e){
-		$('.delete',this).css('opacity',0);
-	});*/
-	
 	
 	
 	

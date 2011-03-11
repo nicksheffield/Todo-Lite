@@ -12,7 +12,7 @@
 
 	$_CLEAN = sec_clean($_POST);
 
-	$date = strftime("%b %d %Y %H:%M",time());
+	$date = strftime("%b %d %Y %H:%M:%S",time());
 
 	$inserted = $db->insert(array('content'=>$_CLEAN['content'],'date'=>$date));
 	

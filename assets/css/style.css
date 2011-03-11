@@ -7,7 +7,7 @@
 	html,body{
 		cursor:default;
 		height:100%;
-		background:#222;
+		background:#333 url('../images/noise.gif');
 		margin-top:0px;
 	}
 	
@@ -38,20 +38,19 @@
 		font-size:46px;
 		display:inline-block;
 		margin-top:-5px;
-		padding-bottom:5px;
+		padding:5px;
 		letter-spacing:-1px;
 		color:#fff;
-		text-shadow:0px 0px 5px #000;
+		text-shadow:0px 5px 10px #222;
 		
-		-webkit-mask-image: -webkit-gradient(linear, left top, left bottombottom, from(rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,0)), to(rgba(0,0,0,1)));
+		border-radius:5px;
 		
-		/*-webkit-transition: all .3s;  
+		-webkit-transition: all .3s;  
         -moz-transition: all .3s;  
         transition: all .3s;
 	}
 	
 	header h1:hover{
-		color:#333;*/
 	}
 
 
@@ -67,7 +66,7 @@
 		
 		border-radius:5px;
 		
-		-webkit-box-shadow:0px 0px 5px #000;
+		-webkit-box-shadow:0px 5px 10px #222;
 	}
 	
 	#input{
@@ -87,7 +86,7 @@
 		border:0;
 		border-radius:4px;
 		
-		background:#fff url('../images/11.png') no-repeat 11px 11px;
+		background:#fff url('../images/pencil.png') no-repeat 11px 11px;
 	}
 	
 	#input input:focus {
@@ -98,7 +97,7 @@
 	
 	section{
 		margin-bottom:20px;
-		padding-bottom:10px;
+		padding:5px 0 5px;
 		width:500px;
 	}
 	

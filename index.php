@@ -6,8 +6,6 @@
 
 	$db = new sqlite($config['db'],$config['table']);
 
-	$title = 'To-Do Lite';
-
 	$posts = $db->get('id,content,date');
 
 ?>
@@ -24,7 +22,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title><?php echo $title; ?></title>
+	<title><?php echo $config['title']; ?></title>
 	
 	<link rel="shortcut icon" href="favicon.ico">
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
@@ -37,7 +35,7 @@
 
 	<div id="container">
 		<header>
-			<h1><?php echo $title; ?></h1>
+			<h1><?php echo $config['title']; ?></h1>
 		</header>
 		
 		<div id="main">
