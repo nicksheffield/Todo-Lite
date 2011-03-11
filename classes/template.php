@@ -6,7 +6,7 @@ class template{
 		
 		echo '<section id="'.$result['id'].'">
 			<div class="buttons">
-				<a href="#" class="delete"><img src="assets/images/cancel.png"/></a>
+				<img src="assets/images/cancel.png" class="delete"/>
 			</div>
 			
 			<h1>'.substr($result['content'],0,50).'</h1>

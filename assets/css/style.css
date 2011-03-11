@@ -137,3 +137,7 @@
 	p.sub{
 		color:#aaa;
 	}
+	
+	img.delete{
+		cursor:pointer;
+	}
