@@ -60,21 +60,27 @@
 		-webkit-box-shadow:0px 0px 5px #000;
 	}
 	
-	#main input{
-		padding:10px;
-		padding-left:33px;
-		width:555px;
-		margin-top:5px;
-		margin-bottom:40px;
+	#input{
+		width:590px;
+		margin:5px 0 40px 0;
+		background:#eee;
 		
-		background:#fefefe;
-		border:0;
-		border-bottom:1px solid #ccc;
-		
-		background:url('../images/11.png') no-repeat 11px 11px;
+		border:4px solid #eee;
+		border-radius:7px;
 	}
 	
-	#main input:focus {
+	#input input{
+		padding:10px;
+		padding-left:33px;
+		width:547px;
+		
+		border:0;
+		border-radius:4px;
+		
+		background:#fff url('../images/11.png') no-repeat 11px 11px;
+	}
+	
+	#input input:focus {
 		outline:0px; 
 	}
 	

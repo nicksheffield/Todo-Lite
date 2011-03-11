@@ -41,7 +41,9 @@
 		</header>
 		
 		<div id="main">
-			<input type="text" id="post" placeholder="Create New Item" />
+			<div id="input">
+				<input type="text" id="post" placeholder="Create New Item" />
+			</div>
 			<?php 
 				foreach($posts as $post){
 					new template($post);
