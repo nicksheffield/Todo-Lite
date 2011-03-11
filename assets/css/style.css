@@ -8,7 +8,7 @@
 		cursor:default;
 		height:100%;
 		background:#222;
-		margin-top:20px;
+		margin-top:0px;
 	}
 	
 	body,input{
@@ -24,19 +24,14 @@
 	#container{
 		width:600px;
 		margin:0 auto;
-		background:#fefefe;
-		height:100%;
-		padding:40px 60px;
-		
-		border-radius:5px;
 	}
 	
 /* ------------------------------------------------------- HEADER */
 	header{
 		padding-bottom:30px;
-		margin-bottom:40px;
-		border-bottom:1px solid #ccc;
+		bborder-bottom:1px solid #ccc;
 		cursor:default;
+		padding:40px 60px;
 	}
 	
 	header h1{
@@ -45,32 +40,46 @@
 		margin-top:-5px;
 		padding-bottom:5px;
 		letter-spacing:-1px;
-		color:#000;
-		text-shadow:0px 0px 2px #000;
-	}
-	
-	header input{
-		padding:10px;
-		padding-left:33px;
-		width:270px;
-		margin-top:5px;
-		float:right;
-		
-		background:#fefefe;
-		border:1px solid #ccc;
-		
-		background:url('../images/11.png') no-repeat 11px 11px;
-		
-	}
-	
-	header input:focus {
-		outline:0px; 
+		color:#fff;
+		text-shadow:0px 0px 5px #000;
 	}
 
 
 	
 /* ------------------------------------------------------- MAIN */
-
+	
+	#main{
+		width:600px;
+		margin:0 auto;
+		background:#fefefe;
+		height:100%;
+		padding:40px 60px;
+		
+		border-radius:5px;
+		
+		-webkit-box-shadow:0px 0px 5px #000;
+	}
+	
+	#main input{
+		padding:10px;
+		padding-left:33px;
+		width:555px;
+		margin-top:5px;
+		margin-bottom:40px;
+		
+		background:#fefefe;
+		border:0;
+		border-bottom:1px solid #ccc;
+		
+		background:url('../images/11.png') no-repeat 11px 11px;
+	}
+	
+	#main input:focus {
+		outline:0px; 
+	}
+	
+/* ------------------------------------------------------- ITEMS */
+	
 	section{
 		margin-bottom:20px;
 		padding-bottom:10px;

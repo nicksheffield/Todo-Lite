@@ -6,7 +6,7 @@
 
 	$db = new sqlite($config['db'],$config['table']);
 
-	$title = 'Todo Lite';
+	$title = 'To-Do Lite';
 
 	$posts = $db->get('id,content,date');
 
@@ -38,11 +38,10 @@
 	<div id="container">
 		<header>
 			<h1><?php echo $title; ?></h1>
-			
-			<input type="text" id="post" />
 		</header>
 		
 		<div id="main">
+			<input type="text" id="post" placeholder="Create New Item" />
 			<?php 
 				foreach($posts as $post){
 					new template($post);
