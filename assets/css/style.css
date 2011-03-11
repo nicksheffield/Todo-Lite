@@ -52,6 +52,7 @@
 	}
 	
 	header h1:hover{
+		text-indent:5px;
 	}
 
 
@@ -104,7 +105,12 @@
 		margin-bottom:20px;
 		padding:5px 0 5px;
 		width:500px;
+		display:block;
 	}
+	
+	/*section:hover .posts, section:hover p.sub{
+		margin-left:10px;
+	}*/
 	
 	section:hover .buttons{
 		opacity:1;
@@ -129,13 +135,22 @@
 		display:none;
 	}
 	
-	section p{
+	#content{
 		margin-bottom:5px;
-		margin-left:40px;
+		padding-left:40px;
+		
+		-webkit-transition: all .3s;  
+        -moz-transition: all .3s;  
+        transition: all .3s;
 	}
 	
 	p.sub{
 		color:#aaa;
+		display:inline-block;
+		
+		-webkit-transition: all .3s;  
+        -moz-transition: all .3s;  
+        transition: all .3s;
 	}
 	
 	img.delete{

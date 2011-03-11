@@ -10,7 +10,7 @@ class template{
 			</div>
 			
 			<h1>'.substr($result['content'],0,50).'</h1>
-			<div contenteditable="true" spellcheck="false" id="content">
+			<div contenteditable="true" spellcheck="false" id="content" class="posts">
 				<p>
 					'.$result['content'].'
 				</p>

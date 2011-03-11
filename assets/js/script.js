@@ -4,6 +4,10 @@
 */
 
 $(document).ready(function(){
+
+// PRETTY DATE
+// ##################################################################################
+
 	$('p.date').prettyDate();
 	
 	setInterval(function(){
@@ -15,7 +19,9 @@ $(document).ready(function(){
 	}
 	
 	
-	// CReate
+// CREATE ITEM
+// ##################################################################################
+
 	$('#post').keyup(function(e){
 		// if the enter key is pressed
 		if(e.which==13){
@@ -41,7 +47,9 @@ $(document).ready(function(){
 		}
 	});
 	
-	// Update
+// UPDATE ITEM
+// ##################################################################################
+
 	var t;
 	$('#content').live('keyup',function(){
 		
@@ -63,10 +71,7 @@ $(document).ready(function(){
 				},
 				success:function(msg){
 					if(!msg){
-						console.error('update failure');
-					}else{
-						console.log('success!');
-						console.log(msg);
+						console.error('update failed');
 					}
 				}
 			});
@@ -75,7 +80,9 @@ $(document).ready(function(){
 		
 	});
 	
-	// Delete
+// DELETE ITEM
+// ##################################################################################
+
 	$('.delete').live('click',function(){
 		var parent = $(this).parent().parent();
 		

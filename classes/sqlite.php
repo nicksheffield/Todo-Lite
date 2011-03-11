@@ -83,6 +83,8 @@ class sqlite {
 	
 	
 	
+# Set a where clause inside any future get or insert queries. Needs a bit of work
+
 	public function where($property,$value){
 		
 		if(!$this->where_conditions)  $this->where_conditions = ' WHERE ';
