@@ -10,6 +10,10 @@ $(document).ready(function(){
 		$('p.date').prettyDate();
 	},5000);
 	
+	if (!Modernizr.input.placeholder){
+		$('#input input').placeholder('Create New Item','#a9a9a9');
+	}
+	
 	
 	// CReate
 	$('#post').keyup(function(e){

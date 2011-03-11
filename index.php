@@ -51,6 +51,7 @@
 	</div> <!--! end of #container -->
 
 	<script src="assets/js/jquery-1.5.1.min.js"></script>
+	<script src="assets/js/jquery-placeholders.js"></script>
 	<script src="assets/js/pretty.js"></script>
 	<script src="assets/js/script.js?v=<?php echo rand(0,999999);?>"></script>
 </body>
