@@ -113,12 +113,14 @@ class sqlite {
 		$q = "INSERT INTO $this->table( ";
 		
 		foreach($arr as $key=>$value){
+			$key = sqlite_escape_string($key);
 			$q .= "$key,";
 		}
 		
 		$q = $this->trim($q).') VALUES(';
 		
 		foreach($arr as $key=>$value){
+			$value = sqlite_escape_string($value);
 			$q .= "'$value',";
 		}
 		

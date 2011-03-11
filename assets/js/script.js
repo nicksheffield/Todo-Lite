@@ -73,7 +73,7 @@ $(document).ready(function(){
 	});
 	
 	// Delete
-	$('.delete').css('opacity',0).live('click',function(){
+	$('.delete')/*.css('opacity',0)*/.live('click',function(){
 		var parent = $(this).parent().parent();
 		
 		$('p.date',parent).removeClass('date').text('Removing...');
@@ -92,11 +92,11 @@ $(document).ready(function(){
 				}
 			});
 	});
-	$('section').live('mouseover',function(e){
+	/*$('section').live('mouseover',function(e){
 		$('.delete',this).css('opacity',1);
 	}).live('mouseout',function(e){
 		$('.delete',this).css('opacity',0);
-	});
+	});*/
 	
 	
 	
