@@ -8,7 +8,7 @@
 
 	$title = 'Todo Lite';
 
-	$list = $db->get('id,content,date');
+	$posts = $db->get('id,content,date');
 
 ?>
 
@@ -28,10 +28,10 @@
 	
 	<link rel="shortcut icon" href="favicon.ico">
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/style.css?v=<?php echo rand(0,999999);?>">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css?v=<?php echo rand(0,999999);?>">
 
-	<script src="js/modernizr-1.7.min.js"></script>
+	<script src="assets/js/modernizr-1.7.min.js"></script>
 </head>
 <body>
 
@@ -39,20 +39,20 @@
 		<header>
 			<h1><?php echo $title; ?></h1>
 			
-			<input type="text" placeholder="New List Item" id="post" />
+			<input type="text" id="post" />
 		</header>
 		
 		<div id="main">
 			<?php 
-				foreach($list as $post){
+				foreach($posts as $post){
 					new template($post);
 				}
 			?>
 		</div>
 	</div> <!--! end of #container -->
 
-	<script src="js/jquery-1.5.1.min.js"></script>
-	<script src="js/pretty.js"></script>
-	<script src="js/script.js?v=<?php echo rand(0,999999);?>"></script>
+	<script src="assets/js/jquery-1.5.1.min.js"></script>
+	<script src="assets/js/pretty.js"></script>
+	<script src="assets/js/script.js?v=<?php echo rand(0,999999);?>"></script>
 </body>
 </html>

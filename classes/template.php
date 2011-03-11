@@ -6,15 +6,15 @@ class template{
 		
 		echo '<section id="'.$result['id'].'">
 			<div class="buttons">
-				<a href="#" class="delete"><img src="images/12.png"/></a>
+				<a href="#" class="delete"><img src="assets/images/12.png"/></a>
 			</div>
 			
 			<h1>'.substr($result['content'],0,50).'</h1>
 			<p contenteditable="true">
 				'.$result['content'].'
 			</p>
-			<p class="date" title="'.$result['date'].'">
-				&nbsp;
+			<p class="date sub" title="'.$result['date'].'">
+				just now
 			</p>
 		</section>';
 		

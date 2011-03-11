@@ -1,0 +1,98 @@
+/*
+	By Nick Sheffield
+	nick@nicksheffield.com
+*/
+
+/* ------------------------------------------------------- MISC */
+	html,body{
+		cursor:default;
+		height:100%;
+		background:#222;
+		margin-top:20px;
+	}
+	
+	body,input{
+		font-family:'Ubuntu',Arial,Helvetica,sans-serif;
+	}
+	
+	h1,h2,h3{cursor:default;}
+	
+	*[contenteditable=true]{
+		cursor:text;
+	}
+	
+	#container{
+		width:600px;
+		margin:0 auto;
+		background:#fefefe;
+		height:100%;
+		padding:40px 60px;
+		
+		border-radius:5px;
+	}
+	
+/* ------------------------------------------------------- HEADER */
+	header{
+		padding-bottom:30px;
+		margin-bottom:40px;
+		border-bottom:1px solid #ccc;
+		cursor:default;
+	}
+	
+	header h1{
+		font-size:46px;
+		display:inline-block;
+		margin-top:-5px;
+		padding-bottom:5px;
+		letter-spacing:-1px;
+		color:#000;
+		text-shadow:0px 0px 2px #000;
+	}
+	
+	header input{
+		padding:10px;
+		padding-left:33px;
+		width:270px;
+		margin-top:5px;
+		float:right;
+		
+		background:#fefefe;
+		border:1px solid #ccc;
+		
+		background:url('../images/11.png') no-repeat 11px 11px;
+		
+	}
+	
+	header input:focus {
+		outline:0px; 
+	}
+
+
+	
+/* ------------------------------------------------------- MAIN */
+
+	section{
+		margin-bottom:20px;
+		padding-bottom:10px;
+		width:500px;
+	}
+	
+	section .buttons{
+		float:left;
+		width:20px;
+		margin-right:20px;
+		padding-top:10px;
+	}
+	
+	section h1{
+		display:none;
+	}
+	
+	section p{
+		margin-bottom:5px;
+		margin-left:40px;
+	}
+	
+	p.sub{
+		color:#aaa;
+	}
