@@ -10,9 +10,11 @@ class template{
 			</div>
 			
 			<h1>'.substr($result['content'],0,50).'</h1>
-			<p contenteditable="true" spellcheck="false">
-				'.$result['content'].'
-			</p>
+			<div contenteditable="true" spellcheck="false" id="content">
+				<p>
+					'.$result['content'].'
+				</p>
+			</div>
 			<p class="date sub" title="'.$result['date'].'">
 				Less than a minute ago
 			</p>

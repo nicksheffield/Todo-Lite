@@ -43,7 +43,7 @@ $(document).ready(function(){
 	
 	// Update
 	var t;
-	$('p[contenteditable=true]').live('keyup',function(){
+	$('#content').live('keyup',function(){
 		
 		clearTimeout(t);
 		
@@ -51,6 +51,8 @@ $(document).ready(function(){
 		var id = $(this).parent().attr('id');
 		
 		t = setTimeout(function(){
+		
+		console.log(content);
 		
 			$.ajax({
 				type:'POST',
@@ -86,7 +88,9 @@ $(document).ready(function(){
 				},
 				success:function(msg){
 					if(msg){
-						parent.slideUp(200);
+						parent.slideUp(200,function(){
+							$(this).remove();
+						});
 					}else{
 						console.error('delete failed');
 					}
