@@ -6,7 +6,7 @@
 
 	$db = new sqlite($config['db'],$config['table']);
 
-	$posts = $db->get('id,content,date');
+	$posts = $db->get('id,content,date,complete');
 
 ?>
 
@@ -42,6 +42,11 @@
 			<div id="input">
 				<input type="text" id="post" placeholder="Create New Item" />
 			</div>
+			
+			<div id="show">
+				<a href="#" id="show_completed">Show Completed</a>
+			</div>
+			
 			<?php 
 				foreach($posts as $post){
 					new template($post);

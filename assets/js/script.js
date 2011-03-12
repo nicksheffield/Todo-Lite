@@ -105,6 +105,45 @@ $(document).ready(function(){
 			});
 	});
 	
+// COMPLETED ITEM
+// ##################################################################################
+	
+	$('#show_completed').click(function(){
+		
+		if($(this).text()=='Show Completed'){
+			$('.complete').css('display','block').slideUp(0).slideDown(200);
+			$(this).text('Hide Completed');
+		}else{
+			$('.complete').slideUp(200);
+			$(this).text('Show Completed');
+		}
+		
+		return false;
+	});
+
+	$('.completed').live('click',function(){
+		var parent = $(this).parent().parent();
+		
+		$.ajax({
+				type:'POST',
+				url:'complete.php',
+				data:{
+					id:parent.attr('id')
+				},
+				success:function(msg){
+					console.log(msg);
+					if(msg){
+						parent.addClass('complete');
+						if($('#show_completed').text()=='Show Completed'){
+							parent.slideUp(200);
+						}
+					}else{
+						console.error('completion update failed');
+					}
+				}
+			});
+	});
+	
 	
 	
 });

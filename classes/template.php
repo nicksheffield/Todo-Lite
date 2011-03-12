@@ -4,9 +4,12 @@ class template{
 	
 	function __construct($result){
 		
-		echo '<section id="'.$result['id'].'">
+		$complete = $result['complete']=='true'?'complete':'';
+		
+		echo '<section id="'.$result['id'].'" class="'.$complete.'">
 			<div class="buttons">
-				<img src="assets/images/cancel.png" class="delete"/>
+				<img src="assets/images/cancel.png" class="delete" alt="delete" title="delete" />
+				<img src="assets/images/check.png" class="completed" alt="completed" title="completed" />
 			</div>
 			
 			<h1>'.substr($result['content'],0,50).'</h1>

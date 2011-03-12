@@ -26,7 +26,8 @@ class sqlite {
 					"CREATE TABLE $table(
 						id INTEGER PRIMARY KEY,
 						content TINYTEXT NOT NULL,
-						date DATETIME NOT NULL
+						date DATETIME NOT NULL,
+						complete VARCHAR(5) DEFAULT 'false'
 					)"
 				);
 			}

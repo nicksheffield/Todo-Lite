@@ -15,7 +15,7 @@
 	$db->where('id',sqlite_escape_string($_CLEAN['id']));
 	
 	$updated = $db->update(array(
-		'content' => sqlite_escape_string($_CLEAN['content'])
+		'complete' => 'true'
 	));
 	
 	echo $updated;
