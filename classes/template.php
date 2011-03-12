@@ -5,6 +5,7 @@ class template{
 	function __construct($result){
 		
 		$complete = $result['complete']=='true'?'complete':'';
+		$editable = $result['complete']=='true'?'false':'true';
 		
 		echo '<section id="'.$result['id'].'" class="'.$complete.'">
 			<div class="buttons">
@@ -13,7 +14,7 @@ class template{
 			</div>
 			
 			<h1>'.substr($result['content'],0,50).'</h1>
-			<div contenteditable="true" spellcheck="false" id="content" class="posts">
+			<div contenteditable="'.$editable.'" spellcheck="false" id="content" class="posts">
 				<p>
 					'.$result['content'].'
 				</p>
