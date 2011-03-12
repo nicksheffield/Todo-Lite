@@ -7,10 +7,10 @@ class template{
 		$complete = $result['complete']=='true'?'complete':'';
 		$editable = $result['complete']=='true'?'false':'true';
 		
-		echo '<section id="'.$result['id'].'" class="'.$complete.'">
+		echo '<section id="'.escape_num($result['id']).'" class="'.$complete.'">
 			<div class="buttons">
 				<img src="assets/images/cancel.png" class="delete" alt="delete" title="delete" />
-				<img src="assets/images/check.png" class="completed" alt="completed" title="completed" />
+				<img src="assets/images/check.png" class="completed" alt="completed" title="mark as completed" />
 			</div>
 			
 			<h1>'.substr($result['content'],0,50).'</h1>

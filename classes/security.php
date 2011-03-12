@@ -5,8 +5,8 @@
 
 function escape_str($str){
 	
-	$output = filter_html($str);
-	return addcslashes($output,"\x00\n\r\'\x1a\x25");
+	$output = filter_html($str); // there is a bug with this
+	return addcslashes($output,"\x00\'\x1a\x25");
 	
 }
 
@@ -29,11 +29,13 @@ function escape_bool($bool){
 function filter_html($input){
 	
 	$safelist = Array(
-		'/<b>|<\/b>/i',
+		/*'/<b>|<\/b>/i',
+		'/<p>|<\/p>/i',
 		'/<strong>|<\/strong>/i',
 		'/<i>|<\/i>/i',
 		'/<em>|<\/em>/i',
-		'/<br[^>]*>/i',
+		'/<br[^>]*>/i',*/
+		'/<p>|<\/p>/i'
 	);
 	
 	$output = cleanWhitespace($input);

@@ -2,6 +2,7 @@
 
 	require_once('config.php');
 	require_once('classes/sqlite.php');
+	require_once('classes/security.php');
 	require_once('classes/template.php');
 
 	$db = new sqlite($config['db'],$config['table']);
