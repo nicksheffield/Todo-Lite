@@ -123,25 +123,26 @@ $(document).ready(function(){
 
 	$('.completed').live('click',function(){
 		var parent = $(this).parent().parent();
+		var edited = $('div[contenteditable=true]',parent);
 		
 		$.ajax({
-				type:'POST',
-				url:'complete.php',
-				data:{
-					id:parent.attr('id')
-				},
-				success:function(msg){
-					console.log(msg);
-					if(msg){
-						parent.addClass('complete');
-						if($('#show_completed').text()=='Show Completed'){
-							parent.slideUp(200);
-						}
-					}else{
-						console.error('completion update failed');
+			type:'POST',
+			url:'complete.php',
+			data:{
+				id:parent.attr('id')
+			},
+			success:function(msg){
+				if(msg){
+					parent.addClass('complete');
+					edited.attr('contenteditable','false');
+					if($('#show_completed').text()=='Show Completed'){
+						parent.slideUp(200);
 					}
+				}else{
+					console.error('completion update failed');
 				}
-			});
+			}
+		});
 	});
 	
 	

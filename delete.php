@@ -10,6 +10,6 @@
 
 	$db = new sqlite($config['db'],$config['table']);
 
-	$deleted = $db->del('id',sqlite_escape_string($_POST['id']));
+	$deleted = $db->del('id',escape_num($_POST['id']));
 	
 	echo $deleted;

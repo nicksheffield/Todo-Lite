@@ -152,6 +152,8 @@
 	
 	p.sub{
 		color:#aaa;
+		font-style:italic;
+		font-size:11px;
 		display:inline-block;
 		padding-left:10px;
 		

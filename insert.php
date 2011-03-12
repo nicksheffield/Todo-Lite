@@ -9,17 +9,19 @@
 	require_once('classes/template.php');
 
 	$db = new sqlite($config['db'],$config['table']);
-
-	$_CLEAN = sec_clean($_POST);
-
+	
+	$content = escape_str($_POST['content']);
 	$date = strftime("%b %d %Y %H:%M:%S",time());
 
-	$inserted = $db->insert(array('content'=>$_CLEAN['content'],'date'=>$date));
+	$inserted = $db->insert(array(
+		'content'=>$content,
+		'date'=>$date
+	));
 	
 	if($inserted){
 		new template(array(
 			'id'		=> $db->last_insert,
-			'content'	=> $_CLEAN['content'],
+			'content'	=> $content,
 			'date'		=> $date
 		));
 	}

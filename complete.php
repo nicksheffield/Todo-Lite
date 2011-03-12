@@ -10,9 +10,7 @@
 
 	$db = new sqlite($config['db'],$config['table']);
 	
-	$_CLEAN = sec_clean($_POST);
-	
-	$db->where('id',sqlite_escape_string($_CLEAN['id']));
+	$db->where('id',escape_str($_POST['id']));
 	
 	$updated = $db->update(array(
 		'complete' => 'true'
