@@ -60,8 +60,6 @@ $(document).ready(function(){
 		
 		t = setTimeout(function(){
 		
-		console.log(content);
-		
 			$.ajax({
 				type:'POST',
 				url:'update.php',
@@ -70,6 +68,7 @@ $(document).ready(function(){
 					id:id
 				},
 				success:function(msg){
+					console.log(msg);
 					if(!msg){
 						console.error('update failed');
 					}
@@ -133,10 +132,13 @@ $(document).ready(function(){
 			},
 			success:function(msg){
 				if(msg){
-					parent.addClass('complete');
 					edited.attr('contenteditable','false');
 					if($('#show_completed').text()=='Show Completed'){
-						parent.slideUp(200);
+						parent.slideUp(200,function(){
+							parent.addClass('complete');
+						});
+					}else{
+						parent.addClass('complete');
 					}
 				}else{
 					console.error('completion update failed');

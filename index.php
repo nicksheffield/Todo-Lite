@@ -10,7 +10,6 @@
 	$posts = $db->get('id,content,date,complete');
 
 ?>
-
 <!doctype html>	
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -28,7 +27,7 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="assets/css/reset.css">
-	<link rel="stylesheet" href="assets/css/style.css?v=<?php echo rand(0,999999);?>">
+	<link rel="stylesheet" href="assets/css/style.css">
 
 	<script src="assets/js/modernizr-1.7.min.js"></script>
 </head>
@@ -59,6 +58,6 @@
 	<script src="assets/js/jquery-1.5.1.min.js"></script>
 	<script src="assets/js/jquery-placeholders.js"></script>
 	<script src="assets/js/pretty.js"></script>
-	<script src="assets/js/script.js?v=<?php echo rand(0,999999);?>"></script>
+	<script src="assets/js/script.js"></script>
 </body>
 </html>

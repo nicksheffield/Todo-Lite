@@ -9,8 +9,8 @@ class template{
 		
 		echo '<section id="'.escape_num($result['id']).'" class="'.$complete.'">
 			<div class="buttons">
-				<img src="assets/images/cancel.png" class="delete" alt="delete" title="delete" />
 				<img src="assets/images/check.png" class="completed" alt="completed" title="mark as completed" />
+				<img src="assets/images/cancel.png" class="delete" alt="delete" title="delete" />
 			</div>
 			
 			<h1>'.substr($result['content'],0,50).'</h1>

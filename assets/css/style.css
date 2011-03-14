@@ -22,14 +22,13 @@
 	}
 	
 	#container{
-		width:600px;
+		width:720px;
 		margin:0 auto;
 	}
 	
 /* ------------------------------------------------------- HEADER */
 	header{
 		padding-bottom:30px;
-		bborder-bottom:1px solid #ccc;
 		cursor:default;
 		padding:40px 60px;
 	}
@@ -61,10 +60,9 @@
 	
 	#main{
 		width:600px;
-		margin:0 auto;
 		background:#fefefe;
-		height:100%;
 		padding:40px 60px;
+		margin:0 auto;
 		
 		border-radius:5px;
 		-moz-border-radius:5px;
@@ -139,6 +137,10 @@
 	.complete{
 		display:none;
 		color:#13a500;
+	}
+	
+	.complete .completed{
+		display:none;
 	}
 	
 	#content{
