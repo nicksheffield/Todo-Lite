@@ -1,2 +1,3 @@
+!To-Do Lite
 Simply extract into a server environment with sqlite installed and run the index.php file to create a new database file ready for use.
 Delete the db/todo.sqlite file to reset the database
