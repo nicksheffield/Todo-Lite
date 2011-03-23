@@ -21,10 +21,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+	
 	<title><?php echo $config['title']; ?></title>
 	
-	<link rel="shortcut icon" href="favicon.ico">
+	<!--<link rel="shortcut icon" href="favicon.ico">-->
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="assets/css/style.css">
