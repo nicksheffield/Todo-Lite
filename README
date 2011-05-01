@@ -1,2 +1,9 @@
-Simply extract into a server environment with sqlite installed and run the index.php file to create a new database file ready for use.
-Delete the db/todo.sqlite file to reset the database
+=tdlite=
+
+To install, simply extract into your localhost.
+
+Tdlite features intelligent database creation, so just type the name of the database you want after tdlite/ and it'll be created.
+
+*eg. localhost/tdlite/mylist*
+
+Deleting the .sqlite files in the db files resets that database.
