@@ -30,7 +30,8 @@ $(document).ready(function(){
 				type:'POST',
 				url:'insert.php',
 				data:{
-					content:$(this).val()
+					content:$(this).val(),
+					db:db
 				},
 				success:function(msg){
 					if(msg){
@@ -65,7 +66,8 @@ $(document).ready(function(){
 				url:'update.php',
 				data:{
 					content:content,
-					id:id
+					id:id,
+					db:db
 				},
 				success:function(msg){
 					console.log(msg);
@@ -90,7 +92,8 @@ $(document).ready(function(){
 				type:'POST',
 				url:'delete.php',
 				data:{
-					id:parent.attr('id')
+					id:parent.attr('id'),
+					db:db
 				},
 				success:function(msg){
 					if(msg){
@@ -128,7 +131,8 @@ $(document).ready(function(){
 			type:'POST',
 			url:'complete.php',
 			data:{
-				id:parent.attr('id')
+				id:parent.attr('id'),
+				db:db
 			},
 			success:function(msg){
 				if(msg){

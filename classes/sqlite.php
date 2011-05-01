@@ -77,6 +77,7 @@ class sqlite {
 		$q = $this->trim($q).' FROM '.$this->table;
 		
 		$q .= $this->where_conditions;
+		$this->where_conditions = '';
 		
 		# send the query to the database
 		return $this->db->arrayQuery($q,SQLITE_ASSOC);
@@ -152,6 +153,7 @@ class sqlite {
 		$q = $this->trim($q,1);
 		
 		$q .= $this->where_conditions;
+		$this->where_conditions = '';
 		
 		$exec = $this->db->queryexec($q);
 		

@@ -8,7 +8,7 @@
 	require_once('classes/security.php');
 	require_once('classes/template.php');
 
-	$db = new sqlite($config['db'],$config['table']);
+	$db = new sqlite($_POST['db'],$config['table']);
 	
 	$content = escape_str($_POST['content']);
 	$date = strftime("%b %d %Y %H:%M:%S",time());
