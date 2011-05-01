@@ -1,9 +1,10 @@
-=tdlite=
+tdlite
+================================================================
 
 To install, simply extract into your localhost.
 
 Tdlite features intelligent database creation, so just type the name of the database you want after tdlite/ and it'll be created.
 
-*eg. localhost/tdlite/mylist*
+eg. *localhost/tdlite/mylist*
 
-Deleting the .sqlite files in the db files resets that database.
+Deleting the .sqlite files in the db folder resets that database.
