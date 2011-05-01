@@ -1,13 +1,17 @@
 <?php
 
-	require_once('config.php');
+	/*
+		By Nick Sheffield
+		nick@nicksheffield.com
+	*/
+
 	require_once('classes/sqlite.php');
 	require_once('classes/security.php');
 	require_once('classes/template.php');
 	
 	$database = isset($_GET['db'])?$_GET['db']:'todo';
 
-	$db = new sqlite($database,$config['table']);
+	$db = new sqlite($database);
 
 	$posts = $db->get('id,content,date,complete');
 

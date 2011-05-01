@@ -1,5 +1,5 @@
-/* Author: 
-	Nick Sheffield
+/*
+	By Nick Sheffield
 	nick@nicksheffield.com
 */
 
