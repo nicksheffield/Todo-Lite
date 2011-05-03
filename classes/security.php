@@ -5,8 +5,8 @@
 
 function escape_str($str){
 	
-	$output = filter_html($str); // there is a bug with this
-	return addcslashes($output,"\x00\'\x1a\x25");
+	$output = filter_html($str);
+	return $output;
 	
 }
 
@@ -28,48 +28,6 @@ function escape_bool($bool){
 
 function filter_html($input){
 	
-	$safelist = Array(
-		/*'/<b>|<\/b>/i',
-		'/<p>|<\/p>/i',
-		'/<strong>|<\/strong>/i',
-		'/<i>|<\/i>/i',
-		'/<em>|<\/em>/i',
-		'/<br[^>]*>/i',*/
-		'/<p>|<\/p>/i'
-	);
-	
-	$output = cleanWhitespace($input);
-	$finds = getTags($output);
-	
-	foreach($finds as $find){
-		
-		$clean = true;
-		
-		foreach($safelist as $safetag){
-			if(preg_match($safetag,$find) >0){
-				$clean = false;
-				break;
-			}
-		}
-		if($clean === true){
-			$output = str_ireplace($find,htmlentities($find),$output);
-		}
-		
-	}
-	
-	return $output;
+	return strip_tags($input,'<br/>,<p>');
 	
 }
-
-function cleanWhitespace($input){
-	$white_rx = "/<\s*/";
-	$output = preg_replace($white_rx, "<", $input);
-	return $output;
-}
-
-function getTags($input){
-	$tag_rx = "/<[^>]*>/";
-	preg_match_all($tag_rx, $input, $matches);
-	return $matches[0];
-}
-
