@@ -27,14 +27,24 @@ class sqlite {
 			if(!$q->numRows()){
 				
 				# Query the database to create the table
-				$this->db->queryexec(
-					"CREATE TABLE $table(
-						id INTEGER PRIMARY KEY,
-						content TINYTEXT NOT NULL,
-						date DATETIME NOT NULL,
-						complete VARCHAR(5) DEFAULT 'false'
-					)"
-				);
+				if($table=='list'){
+					$this->db->queryexec(
+						"CREATE TABLE $table(
+							id INTEGER PRIMARY KEY,
+							content TINYTEXT NOT NULL,
+							date DATETIME NOT NULL,
+							complete VARCHAR(5) DEFAULT 'false'
+						)"
+					);
+				}else if($table=='title'){
+					$this->db->queryexec(
+						"CREATE TABLE $table(
+							id INTEGER PRIMARY KEY,
+							name TINYTEXT NOT NULL
+						)"
+					);
+					$this->insert(array('name'=>$dbname.' todo'));
+				}
 			}
 		# If there's an error when creating the database, kill the script and display the error
 		}else{
@@ -58,6 +68,13 @@ class sqlite {
 	
 	public function table($table){
 		$this->table = $table;
+	}
+	
+	
+# Delete a table, only used for debugging
+
+	public function drop($table){
+		$this->db->queryexec("DROP TABLE $table");
 	}
 	
 	

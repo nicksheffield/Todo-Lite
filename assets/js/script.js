@@ -152,6 +152,38 @@ $(document).ready(function(){
 	});
 	
 	
+// UPDATE TITLE
+// ##################################################################################
+
+	var t_e;
+	$('header h1').keyup(function(){
+		
+		clearTimeout(t_e);
+		
+		var name = $(this).text();
+		
+		t_e = setTimeout(function(){
+		
+			$.ajax({
+				type:'POST',
+				url:'update_title.php',
+				data:{
+					name:name,
+					db:db
+				},
+				success:function(msg){
+					console.log(msg);
+					if(!msg){
+						console.error('update failed');
+					}
+				}
+			});
+			
+		},500);
+		
+	});
+	
+	
 	
 });
 

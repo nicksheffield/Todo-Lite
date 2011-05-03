@@ -1,20 +1,25 @@
 <?php
-
+	
 	/*
 		By Nick Sheffield
 		nick@nicksheffield.com
 	*/
-
+	
 	require_once('classes/sqlite.php');
 	require_once('classes/security.php');
 	require_once('classes/template.php');
 	
 	$database = isset($_GET['db'])?$_GET['db']:'todo';
-
+	
 	$db = new sqlite($database);
-
+	
+	$title_db = new sqlite($database,'title');
+	
 	$posts = $db->get('id,content,date,complete');
-
+	
+	$title_db->where('id',1);
+	$title = $title_db->get('name');
+	
 ?>
 <!DOCTYPE html>	
 
@@ -28,7 +33,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title><?php echo $database.' list'; ?></title>
+	<title><?php echo $title[0]['name']; ?></title>
 	
 	<link rel="shortcut icon" href="favicon.ico">
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
@@ -41,7 +46,7 @@
 	
 	<div id="container">
 		<header>
-			<h1><?php echo $database.' list'; ?></h1>
+			<h1 contenteditable="true" spellcheck="false"><?php echo $title[0]['name']; ?></h1>
 		</header>
 		
 		<div id="main">
