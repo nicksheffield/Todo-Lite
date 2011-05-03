@@ -13,12 +13,10 @@
 	
 	$db = new sqlite($database);
 	
-	$title_db = new sqlite($database,'title');
-	
 	$posts = $db->get('id,content,date,complete');
 	
-	$title_db->where('id',1);
-	$title = $title_db->get('name');
+	$db->table('title');
+	$title = $db->get('name');
 	
 ?>
 <!DOCTYPE html>	
@@ -35,7 +33,7 @@
 
 	<title><?php echo $title[0]['name']; ?></title>
 	
-	<link rel="shortcut icon" href="favicon.ico">
+	<!--<link rel="shortcut icon" href="favicon.ico">-->
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="assets/css/style.css">

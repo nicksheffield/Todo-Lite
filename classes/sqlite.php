@@ -8,6 +8,7 @@
 class sqlite {
 
 	private $table;
+	private $dbname;
 	private $db;
 	
 	private $where_conditions;
@@ -20,6 +21,9 @@ class sqlite {
 			# set the default table
 			if($table) $this->table = $table;
 			
+			# set the default database
+			$this->dbname = $dbname;
+			
 			# Check if $this->table exists as a table in the database
 			$q = $this->db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='$table'");
 			
@@ -27,28 +31,38 @@ class sqlite {
 			if(!$q->numRows()){
 				
 				# Query the database to create the table
-				if($table=='list'){
-					$this->db->queryexec(
-						"CREATE TABLE $table(
-							id INTEGER PRIMARY KEY,
-							content TINYTEXT NOT NULL,
-							date DATETIME NOT NULL,
-							complete VARCHAR(5) DEFAULT 'false'
-						)"
-					);
-				}else if($table=='title'){
-					$this->db->queryexec(
-						"CREATE TABLE $table(
-							id INTEGER PRIMARY KEY,
-							name TINYTEXT NOT NULL
-						)"
-					);
-					$this->insert(array('name'=>$dbname.' todo'));
-				}
+				$this->db->queryexec(
+					"CREATE TABLE $table(
+						id INTEGER PRIMARY KEY,
+						content TINYTEXT NOT NULL,
+						date DATETIME NOT NULL,
+						complete VARCHAR(5) DEFAULT 'false'
+					)"
+				);
+				
+				$this->title();
 			}
 		# If there's an error when creating the database, kill the script and display the error
 		}else{
 			exit(__LINE__.' | '.$err);
+		}
+	}
+	
+	
+	public function title(){
+		
+		$q = $this->db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='title'");
+		
+		if(!$q->numRows()){
+			$this->db->queryexec(
+				"CREATE TABLE 'title'(
+					id INTEGER PRIMARY KEY,
+					name TINYTEXT NOT NULL
+				)"
+			);
+			$this->table('title');
+			$this->insert(array('name'=>$this->dbname.' todo'));
+			$this->table('list');
 		}
 	}
 	
@@ -80,19 +94,21 @@ class sqlite {
 	
 	
 	
-# Get an associative array from the database. Can have multiple arguments. Eg.
-# get('id','content','date')
+# Get an associative array from the database. Takes one argument, as a comma separated string
+# get('id,content,date')
 	
-	public function get(){
-		# create an array from each argument supplied when this method was called
-		$arr = func_get_args();
+	public function get($arr){
 		
 		# start writing the select query
 		$q = "SELECT ";
 		
 		# go through each value in $arr, and add it to the select query string
-		foreach($arr as $key=>$value){
-			$q .= $value.',';
+		
+		if($arr){
+			$arr = explode(',',$arr);
+			foreach($arr as $key=>$value){
+				$q .= $value.',';
+			}
 		}
 		
 		# trim the last comma off the string, and add the FROM tablename to the end
