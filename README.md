@@ -1,5 +1,8 @@
-tdlite
+Todo-Lite
 ================================================================
+
+A simple todo list for your local environment!
+------------------
 
 To install, simply extract into your localhost.
 
@@ -7,4 +10,4 @@ Tdlite features intelligent database creation, so just type the name of the data
 
 eg. *localhost/tdlite/mylist*
 
-Deleting the .sqlite files in the db folder resets that database.
+Delete the .sqlite files in the db folder to reset the corresponding databases
