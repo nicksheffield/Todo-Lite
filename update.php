@@ -12,7 +12,7 @@
 	$db->where('id',escape_num($_POST['id']));
 	
 	$updated = $db->update(array(
-		'content' => escape_str($_POST['content'])
+		'content' => $_POST['content']
 	));
 	
 	echo $updated;
