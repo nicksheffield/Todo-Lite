@@ -6,6 +6,8 @@
 	require_once('classes/sqlite.php');
 	require_once('classes/security.php');
 	require_once('classes/template.php');
+	
+	date_default_timezone_set('Pacific/Auckland');
 
 	$db = new sqlite($_POST['db'],'list');
 	
