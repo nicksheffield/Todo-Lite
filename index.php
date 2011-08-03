@@ -34,7 +34,7 @@
 	<title><?php echo $title[0]['name']; ?></title>
 	
 	<!--<link rel="shortcut icon" href="favicon.ico">-->
-	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="assets/fonts/open-sans.css">
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 
