@@ -15,3 +15,4 @@ Delete the .sqlite files in the db folder to reset the corresponding databases
 ###To Be Done
 
 * Change to Silex
+* Update pretty-date jQuery plugin
