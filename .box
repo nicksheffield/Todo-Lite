@@ -1,0 +1,2 @@
+php_extensions: [sqlite]
+shared_writable_dirs: [/db]
