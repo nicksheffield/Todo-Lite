@@ -10,7 +10,8 @@
 	$db = new sqlite($_POST['db'],'list');
 	
 	$content = escape_str($_POST['content']);
-	$date = strftime("%b %d %Y %H:%M:%S",time());
+	//$date = strftime("%b %d %Y %H:%M:%S",time());
+	$date = gmdate('c');
 
 	$inserted = $db->insert(array(
 		'content'=>$content,

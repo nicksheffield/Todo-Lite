@@ -8,15 +8,11 @@ $(document).ready(function(){
 // PRETTY DATE
 // ##################################################################################
 
-	$('p.date').prettyDate();
+	$('p.date').humaneDates();
 	
-	setInterval(function(){
+	/*setInterval(function(){
 		$('p.date').prettyDate();
-	},5000);
-	
-	if (!Modernizr.input.placeholder){
-		$('#input input').placeholder('Create New Item','#a9a9a9');
-	}
+	},5000);*/
 	
 	
 // CREATE ITEM
@@ -25,6 +21,8 @@ $(document).ready(function(){
 	$('#post').keyup(function(e){
 		// if the enter key is pressed
 		if(e.which==13){
+			// add the ajax loading icon
+			spinner.spin(spinner_target);
 			// call ajax to publish the new item
 			$.ajax({
 				type:'POST',
@@ -43,6 +41,7 @@ $(document).ready(function(){
 					}else{
 						console.error('create failed');
 					}
+					spinner.stop(spinner_target);
 				}
 			});
 		}
@@ -184,6 +183,20 @@ $(document).ready(function(){
 	});
 	
 	
+	/* spinner */
+	
+	var opts = {
+		lines: 8, // The number of lines to draw
+		length: 0, // The length of each line
+		width: 3, // The line thickness
+		radius: 5, // The radius of the inner circle
+		color: '#000', // #rgb or #rrggbb
+		speed: 1, // Rounds per second
+		trail: 33, // Afterglow percentage
+		shadow: false // Whether to render a shadow
+	};
+	var spinner_target = document.getElementById('spinner');
+	var spinner = new Spinner(opts);
 	
 });
 

@@ -22,10 +22,10 @@
 <!DOCTYPE html>	
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7 ]> 				<html lang="en" class="ie6"> <![endif]-->
-<!--[if IE 7 ]>					<html lang="en" class="ie7"> <![endif]-->
-<!--[if IE 8 ]>					<html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9 ]>					<html lang="en" class="ie9"> <![endif]-->
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>	<html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>	<html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>	<html lang="en" class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> 	<html lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
@@ -33,12 +33,9 @@
 
 	<title><?php echo $title[0]['name']; ?></title>
 	
-	<!--<link rel="shortcut icon" href="favicon.ico">-->
-	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="assets/css/reset.css">
-	<link rel="stylesheet" href="assets/css/style.css">
-
-	<script src="assets/js/modernizr-1.7.min.js"></script>
+	<link rel="shortcut icon" href="assets/images/favicon.ico" />
+	<link rel="stylesheet" href="assets/css/reset.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 	
@@ -50,6 +47,7 @@
 		<div id="main">
 			<div id="input">
 				<input type="text" id="post" placeholder="Create New Item" />
+				<div id="spinner"></div>
 			</div>
 			
 			<div id="show">
@@ -70,7 +68,8 @@
 	
 	<script src="assets/js/jquery-1.6.min.js"></script>
 	<script src="assets/js/jquery-placeholders.js"></script>
-	<script src="assets/js/pretty.js"></script>
+	<script src="assets/js/humane_date.js"></script>
+	<script src="assets/js/spin.js"></script>
 	<script src="assets/js/script.js"></script>
 </body>
 </html>

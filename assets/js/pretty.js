@@ -10,6 +10,9 @@ function prettyDate(time){
 	var date = new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," ")),
 		diff = (((new Date()).getTime() - date.getTime()) / 1000),
 		day_diff = Math.floor(diff / 86400);
+		
+		console.log('diff:' + diff);
+		console.log('day_diff:' + day_diff);
 			
 	if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 )
 		return;
@@ -22,7 +25,8 @@ function prettyDate(time){
 			diff < 86400 && Math.floor( diff / 3600 ) + " hours ago") ||
 		day_diff == 1 && "Yesterday" ||
 		day_diff < 7 && day_diff + " days ago" ||
-		day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
+		day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago" ||
+		day_diff > 31 && Math.ceil( day_diff *31 ) + " months ago";
 }
 
 // If jQuery is included in the page, adds a jQuery plugin to handle it as well
