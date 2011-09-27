@@ -66,7 +66,7 @@
 		var db = '<?php echo $database; ?>';
 	</script>
 	
-	<script src="assets/js/jquery-1.6.min.js"></script>
+	<script src="assets/js/jquery-1.6.2.min.js"></script>
 	<script src="assets/js/jquery-placeholders.js"></script>
 	<script src="assets/js/humane_date.js"></script>
 	<script src="assets/js/spin.js"></script>
