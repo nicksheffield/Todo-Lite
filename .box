@@ -11,7 +11,7 @@ url_rewrites:
 url_rewrites:
     ### ADVANCED ADMIN REWRITE - Will ignore files and folders
     -
-        rule: "^(.*\/?)$ /index.php?db=$1"
+        rule: "^(.*\/?)$ /index.php?db=$1 last"
         conditions:
             - "!-f $request_filename"
             - "!-d $request_filename"
