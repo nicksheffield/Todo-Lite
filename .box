@@ -1,2 +1,4 @@
 php_extensions: [sqlite]
 shared_writable_dirs: [/db]
+url_rewrites:
+	- ^(.*)$ index.php?db=$1
