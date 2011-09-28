@@ -115,7 +115,7 @@
 	#spinner{
 		position:absolute;
 		bottom:18px;
-		right:18px;
+		right:-24px;
 	}
 	
 /* ------------------------------------------------------- ITEMS */
