@@ -47,6 +47,7 @@
 		<div id="main">
 			<div id="input">
 				<input type="text" id="post" placeholder="Create New Item" />
+				<input type="submit" id="submit" value="Save" />
 				<div id="spinner"></div>
 			</div>
 			

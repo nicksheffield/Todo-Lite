@@ -21,31 +21,40 @@ $(document).ready(function(){
 	$('#post').keyup(function(e){
 		// if the enter key is pressed
 		if(e.which==13){
-			// add the ajax loading icon
-			spinner.spin(spinner_target);
-			// call ajax to publish the new item
-			$.ajax({
-				type:'POST',
-				url:'insert.php',
-				data:{
-					content:$(this).val(),
-					db:db
-				},
-				success:function(msg){
-					if(msg){
-						$('#main').append(msg);
-						
-						$('#main section').last().slideUp(0).slideDown(200);
-						
-						$('#post').val('');
-					}else{
-						console.error('create failed');
-					}
-					spinner.stop(spinner_target);
-				}
-			});
+			save();
 		}
 	});
+	
+	$('#submit').click(function(){
+		save();
+	});
+	
+	
+	function save(){
+		// add the ajax loading icon
+		spinner.spin(spinner_target);
+		// call ajax to publish the new item
+		$.ajax({
+			type:'POST',
+			url:'insert.php',
+			data:{
+				content:$('#post').val(),
+				db:db
+			},
+			success:function(msg){
+				if(msg){
+					$('#main').append(msg);
+					
+					$('#main section').last().slideUp(0).slideDown(200);
+					
+					$('#post').val('');
+				}else{
+					console.error('create failed');
+				}
+				spinner.stop(spinner_target);
+			}
+		});
+	}
 	
 // UPDATE ITEM
 // ##################################################################################
