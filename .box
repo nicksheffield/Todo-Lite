@@ -1,8 +1,17 @@
 
+document_root: /
+
 php_extensions: [sqlite]
 
 shared_writable_dirs: [/db]
 
 url_rewrites:
-    - about/us about_us.php
     - ^(.*\/?)$ /index.php?db=$1
+    
+url_rewrites:
+    ### ADVANCED ADMIN REWRITE - Will ignore files and folders
+    -
+        rule: "^(.*\/?)$ /index.php?db=$1"
+        conditions:
+            - "!-f $request_filename"
+            - "!-d $request_filename"
