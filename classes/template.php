@@ -4,13 +4,8 @@ class template{
 	
 	function __construct($result){
 		
-		if(isset($result['complete'])){
-			$complete = $result['complete']=='true'?'complete':'';
-			$editable = $result['complete']=='true'?'false':'true';
-		}else{
-			$complete = '';
-			$editable = 'true';
-		}
+		$complete = (isset($result['complete']) && $result['complete'] == 'true') ? 'complete' : '' ;
+		$editable = (isset($result['complete']) && $result['complete'] == 'true') ? 'false' : 'true' ;
 		
 		echo '<section id="'.escape_num($result['id']).'" class="'.$complete.'">
 			<div class="buttons">
