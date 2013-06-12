@@ -1,8 +1,8 @@
 <?php
 
-class template{
+class Template{
 	
-	function __construct($result){
+	public static function make_new($result){
 		
 		$complete = (isset($result['complete']) && $result['complete'] == 'true') ? 'complete' : '' ;
 		$editable = (isset($result['complete']) && $result['complete'] == 'true') ? 'false' : 'true' ;

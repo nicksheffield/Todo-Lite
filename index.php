@@ -13,7 +13,7 @@
 	
 	$db = new sqlite($database);
 	
-	$posts = $db->get('id,content,date,complete');
+	$posts = $db->get('id, content, date, complete');
 	
 	$db->table('title');
 	$title = $db->get('name');
@@ -48,11 +48,11 @@
 			
 			<?php 
 				foreach($posts as $post){
-					new template($post);
+					Template::make_new($post);
 				}
 			?>
 		</div>
-	</div> <!--! end of #container -->
+	</div>
 	
 	<script>
 		var db = '<?php echo $database; ?>';

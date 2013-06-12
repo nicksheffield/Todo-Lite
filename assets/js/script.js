@@ -4,15 +4,6 @@
 */
 
 $(document).ready(function(){
-
-// PRETTY DATE
-// ##################################################################################
-
-	$('p.date').humaneDates();
-	
-	/*setInterval(function(){
-		$('p.date').prettyDate();
-	},5000);*/
 	
 	
 // CREATE ITEM
@@ -31,29 +22,33 @@ $(document).ready(function(){
 	
 	
 	function save(){
-		// add the ajax loading icon
-		spinner.spin(spinner_target);
-		// call ajax to publish the new item
-		$.ajax({
-			type:'POST',
-			url:'insert.php',
-			data:{
-				content:$('#post').val(),
-				db:db
-			},
-			success:function(msg){
-				if(msg){
-					$('#main').append(msg);
-					
-					$('#main section').last().slideUp(0).slideDown(200);
-					
-					$('#post').val('');
-				}else{
-					console.error('create failed');
+		if($('#post').val() != ''){
+
+			// add the ajax loading icon
+			spinner.spin(spinner_target);
+			// call ajax to publish the new item
+		
+			$.ajax({
+				type:'POST',
+				url:'insert.php',
+				data:{
+					content:$('#post').val(),
+					db:db
+				},
+				success:function(msg){
+					if(msg){
+						$('#main').append(msg);
+						
+						$('#main section').last().slideUp(0).slideDown(200);
+						
+						$('#post').val('');
+					}else{
+						console.error('create failed');
+					}
+					spinner.stop(spinner_target);
 				}
-				spinner.stop(spinner_target);
-			}
-		});
+			});
+		}
 	}
 	
 // UPDATE ITEM
@@ -115,50 +110,6 @@ $(document).ready(function(){
 			});
 	});
 	
-// COMPLETED ITEM
-// ##################################################################################
-	
-	$('#show_completed').click(function(){
-		
-		if($(this).text()=='Show Completed'){
-			$('.complete').css('display','block').slideUp(0).slideDown(200);
-			$(this).text('Hide Completed');
-		}else{
-			$('.complete').slideUp(200);
-			$(this).text('Show Completed');
-		}
-		
-		return false;
-	});
-
-	$('.completed').live('click',function(){
-		var parent = $(this).parent().parent();
-		var edited = $('div[contenteditable=true]',parent);
-		
-		$.ajax({
-			type:'POST',
-			url:'complete.php',
-			data:{
-				id:parent.attr('id'),
-				db:db
-			},
-			success:function(msg){
-				if(msg){
-					edited.attr('contenteditable','false');
-					if($('#show_completed').text()=='Show Completed'){
-						parent.slideUp(200,function(){
-							parent.addClass('complete');
-						});
-					}else{
-						parent.addClass('complete');
-					}
-				}else{
-					console.error('completion update failed');
-				}
-			}
-		});
-	});
-	
 	
 // UPDATE TITLE
 // ##################################################################################
@@ -199,7 +150,7 @@ $(document).ready(function(){
 		length: 0, // The length of each line
 		width: 3, // The line thickness
 		radius: 5, // The radius of the inner circle
-		color: '#000', // #rgb or #rrggbb
+		color: '#fff', // #rgb or #rrggbb
 		speed: 1, // Rounds per second
 		trail: 33, // Afterglow percentage
 		shadow: false // Whether to render a shadow
