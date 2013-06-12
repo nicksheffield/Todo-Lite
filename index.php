@@ -13,7 +13,7 @@
 	
 	$db = new sqlite($database);
 	
-	$posts = $db->get('id, content, date, complete');
+	$posts = $db->get('id,content,date,complete');
 	
 	$db->table('title');
 	$title = $db->get('name');
@@ -24,11 +24,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title><?php echo $title[0]['name']; ?></title>
 	
 	<link rel="shortcut icon" href="assets/images/favicon.ico" />
-	<link rel="stylesheet" href="assets/css/reset.css" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500|Roboto+Slab:400,300,100|Bad+Script|Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -40,13 +41,9 @@
 		
 		<div id="main">
 			<div id="input">
-				<input type="text" id="post" placeholder="Create New Item" />
+				<input type="text" id="post" placeholder="What do you need to do?" />
 				<input type="submit" id="submit" value="Save" />
 				<div id="spinner"></div>
-			</div>
-			
-			<div id="show">
-				<a href="#" id="show_completed">Show Completed</a>
 			</div>
 			
 			<?php 
@@ -55,7 +52,7 @@
 				}
 			?>
 		</div>
-	</div>
+	</div> <!--! end of #container -->
 	
 	<script>
 		var db = '<?php echo $database; ?>';
