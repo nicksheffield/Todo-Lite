@@ -30,7 +30,7 @@ $(document).ready(function(){
 		
 			$.ajax({
 				type:'POST',
-				url:'insert.php',
+				url:'actions/insert.php',
 				data:{
 					content:$('#post').val(),
 					db:db
@@ -66,7 +66,7 @@ $(document).ready(function(){
 		
 			$.ajax({
 				type:'POST',
-				url:'update.php',
+				url:'actions/update.php',
 				data:{
 					content:content,
 					id:id,
@@ -93,7 +93,7 @@ $(document).ready(function(){
 		$('p.date',parent).removeClass('date').text('Removing...');
 		$.ajax({
 				type:'POST',
-				url:'delete.php',
+				url:'actions/delete.php',
 				data:{
 					id:parent.attr('id'),
 					db:db
@@ -125,7 +125,7 @@ $(document).ready(function(){
 		
 			$.ajax({
 				type:'POST',
-				url:'update_title.php',
+				url:'actions/update_title.php',
 				data:{
 					name:name,
 					db:db

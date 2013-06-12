@@ -11,7 +11,7 @@
 	
 	$database = isset($_GET['db']) ? $_GET['db'] : 'todo';
 	
-	$db = new sqlite($database);
+	$db = new sqlite('db/'.$database);
 	
 	$posts = $db->get('id, content, date, complete');
 	

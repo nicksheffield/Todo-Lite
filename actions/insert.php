@@ -3,15 +3,15 @@
 
 	if(!isset($_SERVER['HTTP_X_REQUESTED_WITH'])) die();
 
-	require_once('classes/sqlite.php');
-	require_once('classes/security.php');
-	require_once('classes/template.php');
+	require_once('../classes/sqlite.php');
+	require_once('../classes/security.php');
+	require_once('../classes/template.php');
 	
 	date_default_timezone_set('Pacific/Auckland');
 
 	
 
-	$db = new sqlite($_POST['db'],'list');
+	$db = new sqlite('../db/'.$_POST['db'],'list');
 	
 	$content = escape_str($_POST['content']);
 	$date = gmdate('c');
