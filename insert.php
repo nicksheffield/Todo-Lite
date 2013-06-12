@@ -9,6 +9,8 @@
 	
 	date_default_timezone_set('Pacific/Auckland');
 
+	
+
 	$db = new sqlite($_POST['db'],'list');
 	
 	$content = escape_str($_POST['content']);
@@ -20,7 +22,7 @@
 	));
 	
 	if($inserted){
-		new template(array(
+		Template::make_new(array(
 			'id'		=> $db->last_insert,
 			'content'	=> $content,
 			'date'		=> $date

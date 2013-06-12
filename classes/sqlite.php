@@ -13,10 +13,10 @@ class sqlite {
 	
 	private $where_conditions;
 
-	public function __construct($dbname, $table='list'){
+	public function __construct($dbname, $table = 'list'){
 		
 		# If the database doesn't exist, we want to create it
-		if($this->db = new SQLiteDatabase('db/'.strtolower($dbname).'.sqlite', 0666, $err)){
+		if($this->db = new SQLiteDatabase('db/'.$dbname.'.sqlite', 0666, $err)){
 			
 			# set the default table
 			if($table) $this->table = $table;
