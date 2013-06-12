@@ -10,11 +10,3 @@ Tdlite features intelligent database creation, so just type the name of the data
 eg. *localhost/tdlite/mylist*
 
 Delete the .sqlite files in the db folder to reset the corresponding databases
-
-
-###To Be Done
-
-* Change to Silex
-* Update pretty-date jQuery plugin
-* tolowercase for db names so there's no difference between 'name' and 'Name'
-* Add favicon

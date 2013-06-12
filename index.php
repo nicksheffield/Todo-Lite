@@ -9,24 +9,18 @@
 	require_once('classes/security.php');
 	require_once('classes/template.php');
 	
-	$database = isset($_GET['db'])?$_GET['db']:'todo';
+	$database = isset($_GET['db']) ? $_GET['db'] : 'todo';
 	
 	$db = new sqlite($database);
 	
-	$posts = $db->get('id,content,date,complete');
+	$posts = $db->get('id, content, date, complete');
 	
 	$db->table('title');
 	$title = $db->get('name');
 	
 ?>
 <!DOCTYPE html>	
-
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
-<!--[if IE 7 ]>	<html lang="en" class="ie7"> <![endif]-->
-<!--[if IE 8 ]>	<html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9 ]>	<html lang="en" class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> 	<html lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -61,7 +55,7 @@
 				}
 			?>
 		</div>
-	</div> <!--! end of #container -->
+	</div>
 	
 	<script>
 		var db = '<?php echo $database; ?>';
@@ -69,7 +63,6 @@
 	
 	<script src="assets/js/jquery-1.6.2.min.js"></script>
 	<script src="assets/js/jquery-placeholders.js"></script>
-	<script src="assets/js/humane_date.js"></script>
 	<script src="assets/js/spin.js"></script>
 	<script src="assets/js/script.js"></script>
 </body>
